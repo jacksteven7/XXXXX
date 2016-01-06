@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <%= image_tag @post.image.url(:large)%>
+  <%= image_tag @post.left.url(:medium)%>
+  <%= image_tag @post.right.url(:medium)%>
   <strong>Legend:</strong>
   <%= @post.legend %>
 </p>
