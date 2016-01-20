@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [ :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
+  before_action :set_post, only: [ :edit, :update, :destroy, :upvote]
+  before_action :authenticate_user!, only: [:index, :upvote, :edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index
@@ -61,6 +61,12 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def upvote
+    @post.upvote_by current_user 
+    redirect_to :back
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
