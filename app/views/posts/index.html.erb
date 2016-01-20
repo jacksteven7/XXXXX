@@ -5,27 +5,34 @@
   
     <% @posts.each do |post| %>
                     
-        <h4><%= post.user.email %> </h4>
+        
         <br>
-        <table>
-            <tr><td>
-                    <div class="imagepost">
-                        <%= image_tag post.left.url(:medium) %>
-                        <%=  link_to like_post_path(post), method: :put , class: "btn btn-success" do %>
-                            <span class="glyphicon glyphicon-heart"><%= post.get_upvotes.size%></span>
-                            <span class="glyphicon glyphicon-map-marker"><%= post.get_upvotes.size%></span>
-                        <% end %>
-                    </div>
-                </td>
-                <td>
-                    <div class="imagepost">
-                        <%= image_tag post.right.url(:medium) %></td>
-                    </div>
-                </td>
-            <tr>
-        </table>
+        <div class="imagepost">
+            <span class="colorapp" ><%= post.user.email %> </span>
+            <span class="min_ago"><%= time_ago_in_words(post.created_at) %></span>
+            <center>
+            <table>
+                <tr><td>
+                        <div id="imagepost">
+                            <%= image_tag post.left.url(:large) %>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="imagepost">
+                            <%= image_tag post.right.url(:large) %></td>
+                        </div>
+                    </td>
+                <tr>
+            </table>
+            </center>
+            <p class="legend"><%= post.legend %></p>
+            <%=  link_to like_post_path(post), method: :put , class: "btn btn-success" do %>
+               <span class="glyphicon glyphicon-heart"><%= post.get_upvotes.size%></span>
+               <%= post.votes_for.up.by_type(User).voters %>
+            <% end %> <br><br>
+        </div>
         <br>
-        <small><%= post.legend %></small>
+        
         <%= link_to 'Show', post %>
         <% if post.user == current_user %>
           <%= link_to 'Edit', edit_post_path(post) %>
