@@ -26,8 +26,8 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><%=current_user.email%></a></li>
-          <li><%= link_to "Sing out", destroy_user_session_path, method: :delete %></li>
+          <li><a  href="#"><span class="legend" ><%= current_user.email.gsub('@gmail.com' ,'')%></span></a></li>
+          
         </ul>
       </div>
   <% else %>
@@ -35,6 +35,7 @@
     <div class="center">
       <img src="/images/logo.png" alt="">
     </div>
+    <li><%= link_to "Sing out", destroy_user_session_path, method: :delete %></li>
   <% end %>
     
   </div><!-- /.container-fluid -->
