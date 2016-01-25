@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [ :edit, :update, :destroy, :upvote]
+  before_action :set_post, only: [ :edit, :downvote, :update, :destroy, :upvote]
   before_action :authenticate_user!, only: [:index, :upvote, :edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
@@ -64,6 +64,11 @@ class PostsController < ApplicationController
 
   def upvote
     @post.upvote_by current_user 
+    redirect_to :back
+  end
+
+  def downvote
+    @post.downvote_by current_user 
     redirect_to :back
   end
 

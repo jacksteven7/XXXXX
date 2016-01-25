@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   
   resources :posts do
   	member do 
-  		put "like", to: "posts#upvote"
+  		put "left", to: "posts#upvote"
+  		put "right", to: "posts#downvote"
   	end
+  	resources :comments
   end
 
   root 'posts#index'

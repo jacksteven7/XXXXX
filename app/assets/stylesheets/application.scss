@@ -16,13 +16,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#time_ago{
+.align-right{
 	text-align: right;
 }
 
-.lp{
-	padding-left: 2px;
+.legend{
+	font-weight: bold;
 }
-.rp{
-	padding-right: 2px;
+
+.right{
+	color: blue;
+}
+
+.left{
+	color: red;
 }
