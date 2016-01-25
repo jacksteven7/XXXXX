@@ -1,58 +1,62 @@
-<p id="notice"><%= notice %></p>
-  
-    <% @posts.each do |post| %>
-        <br>
-        <div class="row" >
-            <div class="col-md-1"></div>
-            <div class="col-md-10" style="border:1px solid #D3D3D3;">
-                <br>  
-                <div class="row" >
-                    <div class="col-md-6 col-xs-6">
-                        <span class="left" ><%= post.user.email %> </span>
-                    </div>
-                    <div class="col-md-6 col-xs-6 align-right" >
-                        <span class="right"><%= time_ago_in_words(post.created_at) %></span>
-                    </div> 
-                </div>
-                <br>  
-                <div class="row ">
-                    
-                        <div class="col-md-6 col-xs-6 ">
-                                    <%= image_tag post.left.url(:large) , :class => "img-responsive"%>
-                        </div>      
-                        <div class="col-md-6 col-xs-6 ">
-                                    <%= image_tag post.right.url(:large) , :class => "img-responsive" %>
+    <p id="notice"><%= notice %></p>
+      
+        <% @posts.each do |post| %>
+            <br>
+            <div class="row" >
+                <div class="col-md-1"></div>
+                <div class="col-md-10" style="border:1px solid #D3D3D3;">
+                    <br>  
+                    <div class="row" >
+                        <div class="col-md-6 col-xs-6">
+                            <span class="left" ><%= post.user.email %> </span>
                         </div>
-                </div> 
-                <br>
-                <div class="row" >
-                    <div class="col-md-6 col-xs-6">
-                         <span class="glyphicon glyphicon-heart text-danger"><%= post.get_upvotes.size%></span><br>
+                        <div class="col-md-6 col-xs-6 align-right" >
+                            <span class="right"><%= time_ago_in_words(post.created_at) %></span>
+                        </div> 
                     </div>
-                    <div class="col-md-6 col-xs-6 align-right">
-                         <span class="glyphicon glyphicon-heart text-primary"><%= post.get_downvotes.size%></span><br>
+                    <br>  
+                    <div class="row ">
+                        
+                            <div class="col-md-6 col-xs-6 ">
+                                        <%= image_tag post.left.url(:large) , :class => "img-responsive"%>
+                            </div>      
+                            <div class="col-md-6 col-xs-6 ">
+                                        <%= image_tag post.right.url(:large) , :class => "img-responsive" %>
+                            </div>
                     </div> 
-                </div>  
-                <div class="row" >
-                    <div class="col-md-12 col-xs-12">
-                        <span class="legend left" ><%= post.user.email %></span> <span class="right" ><%= post.legend %></span> 
-                        <% @post = post%>
-                        <% for comment in post.comments do %><br>
-                         <span class="legend left" ><%= comment.user.email %></span> <span class="right" ><%= comment.body %></span> 
-                        <% end %>
-                         <br>
+                    <br>
+                    <div class="row" >
+                        <div class="col-md-6 col-xs-6">
+                                <%= link_to left_post_path(post), method: :put , class: "btn btn-danger" do %>
+                                    <span class="glyphicon glyphicon-heart text-danger heart" style="font-size:1.5em;"><%= post.get_upvotes.size%></span>
+                                <% end %>
+                                <br>
+                        </div>
+                        <div class="col-md-6 col-xs-6 align-right">
+                                     <%= link_to right_post_path(post), method: :put , class: "btn btn-primary" do %>
+                                    <span class="glyphicon glyphicon-heart text-primary heart"><%= post.get_downvotes.size%></span>
+                                <% end %>
+                                <br>
+                        </div> 
+                    </div>  
+                    <div class="row" >
+                        <div class="col-md-12 col-xs-12">
+                            <span class="legend left" ><%= post.user.email %></span> <span class="right" ><%= post.legend %></span> 
+                            <% @post = post%>
+                            <% for comment in post.comments do %><br>
+                             <span class="legend left" ><%= comment.user.email %></span> <span class="right" ><%= comment.body %></span> 
+                            <% end %>
+                             <br>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="row" >
-                    <div class="col-md-12 col-xs-12">   
-                       <%= render "comments/form" %>
-                  </div>
-                </div>       
-                <%=  link_to "left",left_post_path(post), method: :put , class: "btn btn-danger" %>
-                <%=  link_to "right",right_post_path(post), method: :put , class: "btn btn-primary"  %>
-           </div>
-        </div>
-        <div class="col-md-1"></div>
-    <% end %>
-<%= link_to 'New Post', new_post_path %>
+                    <br>
+                    <div class="row" >
+                        <div class="col-md-12 col-xs-12">   
+                           <%= render "comments/form" %>
+                      </div>
+                    </div>       
+               </div>
+            </div>
+            <div class="col-md-1"></div>
+        <% end %>
+    <%= link_to 'New Post', new_post_path %>
