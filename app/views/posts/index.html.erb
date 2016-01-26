@@ -26,13 +26,13 @@
                     <div class="row" >
                         <div class="col-md-6 col-xs-6">
                                 <%= link_to left_post_path(post), method: :put , class: "btn btn-danger" do %>
-                                    <span class="glyphicon glyphicon-heart text-danger heart" style="font-size:1.5em;"><%= post.get_upvotes.size%></span>
+                                    <span class="glyphicon glyphicon-heart text-danger  heart"><%= post.get_upvotes.size  %></span>
                                 <% end %>
                                 <br>
                         </div>
                         <div class="col-md-6 col-xs-6 align-right">
                                      <%= link_to right_post_path(post), method: :put , class: "btn btn-primary" do %>
-                                    <span class="glyphicon glyphicon-heart text-primary heart"><%= post.get_downvotes.size%></span>
+                                    <span class="glyphicon glyphicon-heart text-primary heart"><%= post.get_downvotes.size %></span>
                                 <% end %>
                                 <br>
                         </div> 

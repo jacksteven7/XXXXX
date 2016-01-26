@@ -26,10 +26,7 @@
   		width:100%;
 	}
 
-	input:-webkit-autofill {
-    	-webkit-box-shadow: 0 0 0px 1000px white inset;
-    	-webkit-text-fill-color: gray !important;
-	}
+	
 	
 	#notice_wrapper{
 		position: absolute;
@@ -69,9 +66,6 @@
 		}
 	}
 
-
-
-
 	.align-right{
 		text-align: right;
 	}
@@ -85,7 +79,7 @@
 	}
 
 	.heart{
-		font-size:1.5em; 
+		font-size:1.2em; 
 		color: white;
 	}
 
@@ -94,5 +88,5 @@
 	}
 
 	.post-header{
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
