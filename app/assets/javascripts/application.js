@@ -24,3 +24,11 @@ $('#add_comment').keypress(function(e){
 $('#add_comment').mouseover(function() {
   alert( "Handler for .click() called." );
 });
+
+$(document).ready(function(){
+	setTimeout(function(){
+		$('#notice_wrapper').fadeOut("slow",function(){
+			$(this).remove();
+		})
+	},1500);
+});
