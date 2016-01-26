@@ -16,6 +16,15 @@
 	@import "bootstrap-sprockets";
 	@import "bootstrap";
 
+
+	html * {
+		font-family: "Arial"
+	}
+
+	textarea{
+  		width:100%;
+	}
+
 	.align-right{
 		text-align: right;
 	}
@@ -33,10 +42,16 @@
 		color: white;
 	}
 
-	html * {
-		font-family: "Arial"
-	}
-
 	.row{
 		margin-top:20px;
+	}
+
+	.post-header{
+		font-size: 1.5em;
+	}
+
+	.boxsizingBorder {
+	    -webkit-box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	            box-sizing: border-box;
 	}
