@@ -20,10 +20,6 @@
 		text-align: right;
 	}
 
-	.legend{
-		font-weight: bold;
-	}
-
 	.right{
 		color: #317ABE;
 	}
@@ -37,4 +33,10 @@
 		color: white;
 	}
 
-	
+	html * {
+		font-family: "Arial"
+	}
+
+	.row{
+		margin-top:20px;
+	}

@@ -15,3 +15,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$('#add_comment').keypress(function(e){
+	if(e.which == 13){
+	   $(this).closest('form').submit();
+	}
+});		
+
+$('#add_comment').mouseover(function() {
+  alert( "Handler for .click() called." );
+});
