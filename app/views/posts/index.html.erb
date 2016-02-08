@@ -1,62 +1,67 @@
-        <% @posts.each do |post| %>
-            <br>
-            <div class="row" >
-                <div class="col-md-1"></div>
-                <div class="col-md-10" style="border:1px solid #D3D3D3;">
-                    <br>  
+   <div class="col-md-8 col-md-offset-2" >
+    <div class="row">
+   <% @posts.each do |post| %>
+     <br>
                     <div class="row" >
-                        <div class="col-md-6 col-xs-6">
-                            <span class="left post-header" >  <%= post.user.email.gsub('@gmail.com' ,'') %> </span>
-                        </div>
-                        <div class="col-md-6 col-xs-6 align-right" >
-                            <span class="right post-header"><%= time_ago_in_words(post.created_at) %>  </span>
-                        </div> 
-                    </div>
-                    <br>  
-                    <div class="row">
-                        
-                            <div class="col-md-6 col-xs-6 ">
-                                        <%= image_tag post.left.url(:large) , :class => "img-responsive"%>
-                            </div>      
-                            <div class="col-md-6 col-xs-6 ">
-                                        <%= image_tag post.right.url(:large) , :class => "img-responsive" %>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10" style="border:1px solid #D3D3D3;">
+                        <br>  
+                        <div class="row" >
+                            <div class="col-md-6 col-xs-6">
+                                <span class=" post-header" >  <%= link_to post.user.email.gsub('@gmail.com' ,''), post.user %></span>
+                                
                             </div>
-                    </div> 
-                    <br>
-                    <div class="row" >
-                        <div class="col-md-6 col-xs-6">
-                                <%= link_to left_post_path(post), method: :put , class: "btn btn-danger" do %>
-                                    <span class="glyphicon glyphicon-heart text-danger  heart"><%= post.get_upvotes.size  %></span>
-                                <% end %>
-                                <br>
+                            <div class="col-md-6 col-xs-6 align-right" >
+                                <span class="grey post-header"><%= time_ago_in_words(post.created_at) %>  </span>
+                            </div> 
                         </div>
-                        <div class="col-md-6 col-xs-6 align-right">
-                                     <%= link_to right_post_path(post), method: :put , class: "btn btn-primary" do %>
-                                    <span class="glyphicon glyphicon-heart text-primary heart"><%= post.get_downvotes.size %></span>
-                                <% end %>
-                                <br>
+                        <br>  
+                        <div class="row">   
+                            
+                                <div class="col-md-6 col-xs-6 ">
+                                            <%= image_tag post.left.url(:large) , :class => "img-responsive"%>
+                                </div>      
+                                <div class="col-md-6 col-xs-6 ">
+                                            <%= image_tag post.right.url(:large) , :class => "img-responsive" %>
+                                </div>
                         </div> 
-                    </div>  
-                    <div class="row" >
-                        <div class="col-md-12 col-xs-12">
-                            <% if !post.legend.empty? %>
-                                <span class="legend left" ><%= post.user.email %></span> <span class="right" ><%= post.legend %></span> 
-                            <% end %>
-                            <% @post = post%>
-                            <% for comment in post.comments do %><br>
-                             <span class="legend left" ><%= comment.user.email %></span> <span class="right" ><%= comment.body %></span> 
-                            <% end %>
-                             <br>
+                        <br>
+                        <div class="row" >
+                            <div class="col-md-6 col-xs-6">
+                                    <%= link_to left_post_path(post), method: :put , class: "btn btn-danger" do %>
+                                        <span class="glyphicon glyphicon-heart text-danger  heart"><%= post.get_upvotes.size  %></span>
+                                    <% end %>
+                                    <br>
+                            </div>
+                            <div class="col-md-6 col-xs-6 align-right">
+                                         <%= link_to right_post_path(post), method: :put , class: "btn btn-primary" do %>
+                                        <span class="glyphicon glyphicon-heart text-primary heart"><%= post.get_downvotes.size %></span>
+                                    <% end %>
+                                    <br>
+                            </div> 
+                        </div>  
+                        <div class="row" >
+                            <div class="col-md-12 col-xs-12">
+                                <% if !post.legend.empty? %>
+                                    <span class="legend " ><%= post.user.email %></span> <span class="grey" ><%= post.legend %></span> 
+                                <% end %>
+                                <% @post = post%>
+                                <% for comment in post.comments do %><br>
+                                 <span class="legend " ><%= comment.user.email %></span> <span class="grey" ><%= comment.body %></span> 
+                                <% end %>
+                                 <br>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row" >
-                        <div class="col-md-12 col-xs-12">   
-                           <%= render "comments/form" %>
-                      </div>
-                    </div>       
-               </div>
-            </div>
-            <div class="col-md-1"></div>
-        <% end %>
+                        <br>
+                        <div class="row" >
+                            <div class="col-md-12 col-xs-12">   
+                               <%= render "comments/form" %>
+                          </div>
+                        </div>       
+                   </div>
+                </div>
+                <div class="col-md-1"></div>
+               <% end %>
+       </div>        
+    </div>
     <%= link_to 'New Post', new_post_path %>

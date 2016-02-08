@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+ 
+ <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+ 	<div class="row">
+ 		<div class="col-md-2 col-xs-3 well">
+ 			<%= image_tag @user.profilepic, :class => "img-responsive img-circle" %>
+ 		</div>
+ 		<div class="col-md-9 col-xs-9 well">
+ 			 <%= @user.email %>
+ 		</div>
+ 	</div>
+ </div>	
+     
+ 
+  <% for post in @posts  %>
+    <%= image_tag post.left.url(:medium)%>
+    <%= image_tag post.right.url(:medium)%>
+  <% end %>
+
+<%= link_to 'Home', root_path %>
