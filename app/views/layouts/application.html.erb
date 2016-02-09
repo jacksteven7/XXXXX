@@ -22,14 +22,13 @@
         <% end %>
 
             <% if user_signed_in? %>
-            <div class="row" >
-                  <div class="col-md-2 " ></div>
-                  <div class="col-md-8  " >
-                      
-                    <nav class="navbar navbar-custom">
+            <div class="row" style="  border-bottom: 1px solid #E8E8E8; margin: 5px" >
+                  
+                  <div class="col-xs-8 col-xs-offset-2 " >
+                    <nav class="navbar navbar-custom" style="margin-bottom: 0px;">
                       <div class="container-fluid">
                         <div class="navbar-header">
-                          <%= link_to image_tag("/images/rol.png", :border => 0, :width => "100px"),  root_path  %>
+                          <%= link_to image_tag("/images/rol.png", :border => 0, :width => "100px",  :class => "img-responsive"),  root_path  %>
                         </div>    
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                           <ul class="nav navbar-nav navbar-right">
@@ -43,9 +42,8 @@
                         </div>
                       </div>
                     </nav>
-
                   </div>
-                  <div class="col-md-2 " ></div>
+                  
             </div>
             <% else %>
               <center>

@@ -96,7 +96,7 @@
 	}
 
 	.grey{
-		color: grey;
+		color: #E8E8E8;
 	}
 	
 	a:hover
@@ -104,3 +104,9 @@
 	  text-decoration: none;
 	  background: none;
 	}
+
+.thumb1 { 
+ /* 50% 50% centers image in div */
+width: 250px;
+height: 250px;
+}

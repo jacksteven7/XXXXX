@@ -1,20 +1,28 @@
 <p id="notice"><%= notice %></p>
- 
- <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
- 	<div class="row">
- 		<div class="col-md-2 col-xs-3 well">
- 			<%= image_tag @user.profilepic, :class => "img-responsive img-circle" %>
- 		</div>
- 		<div class="col-md-9 col-xs-9 well">
- 			 <%= @user.email %>
- 		</div>
- 	</div>
- </div>	
-     
- 
+ <div class="row">	
+	 <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+	 	<div class="row">
+	 		<div class="col-md-2 col-md-offset-1 col-xs-2  col-xs-offset-1">
+	 			<%= image_tag @user.profilepic, :class => "img-responsive img-circle" %>
+	 		</div>
+	 		<div class="col-md-7 col-md-offset-1 col-xs-2 col-xs-offset-1">
+	 			 <%= @user.email %>
+	 		</div>
+	 	</div>
+	 </div>
+</div>
+<div class="row">
+ <% i=0 %>	
   <% for post in @posts  %>
-    <%= image_tag post.left.url(:medium)%>
-    <%= image_tag post.right.url(:medium)%>
-  <% end %>
-
-<%= link_to 'Home', root_path %>
+	 <div class="col-md-6 col-xs-6 well">
+	 	<div class="row  ">
+	 		<div class="col-md-6 col-xs-6 thumb1" style="background: url('<%= post.left.url(:medium)%>') 50% 50% no-repeat;"></div>
+	 		<div class="col-md-6 col-xs-6 thumb1" style="background: url('<%= post.right.url(:medium)%>') 50% 50% no-repeat;"></div>
+	 	</div>
+	 </div>
+	<% i=i+1 %>	
+	<% if i%2==0 %>	
+		</br>	
+	<% end %>	
+ <% end %>
+</div>
