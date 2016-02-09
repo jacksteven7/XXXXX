@@ -1,112 +1,114 @@
-	/*
-	 * This is a manifest file that'll be compiled into application.css, which will include all the files
-	 * listed below.
-	 *
-	 * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-	 * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
-	 *
-	 * You're free to
-	  add application-wide styles to this file and they'll appear at the bottom of the
-	 * compiled file so the styles you add here take precedence over styles defined in any styles
-	 * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
-	 * file per style scope.
-	 *
-	 *= require_tree .
-	 *= require_self
-	 */
-	@import "bootstrap-sprockets";
-	@import "bootstrap";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to
+  add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 
-	html * {
-		font-family: "Arial"
-	}
-
-	textarea{
-  		width:100%;
-	}
-
-	
-	
-	#notice_wrapper{
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: 999;
-		background: #317ABE;
-		opacity: 0.7;
-
-		p {
-			padding: 2.5rem 0;
-			text-align: center;
-			margin: 0;
-			font-size: 1.25rem;
-			font-weight: 700;
-			color: #FFFFFF;
-			letter-spacing: 1px;
-		}
-	}
-
-	#alert_wrapper{
-		position: absolute;
-		top: 0;
-		width: 100%;
-		z-index: 999;
-		background: #DA534F;
-		opacity: 0.7;
-
-		p {
-			padding: 2.5rem 0;
-			text-align: center;
-			margin: 0;
-			font-size: 1.25rem;
-			font-weight: 700;
-			color: #FFFFFF;
-			letter-spacing: 1px;
-		}
-	}
-
-	.align-right{
-		text-align: right;
-	}
-
-	.right{
-		color: #317ABE;
-	}
-
-	.left{
-		color: #DA534F;
-	}
-
-	.heart{
-		font-size:1.2em; 
-		color: white;
-	}
-
-	.row{
-		margin-top:20px;
-	}
-
-	.post-header{
-		font-size: 1.2em;
-	}
-
-	.bold{
-		font-style: bold;
-	}
-
-	.grey{
-		color: #E8E8E8;
-	}
-	
-	a:hover
-	{
-	  text-decoration: none;
-	  background: none;
-	}
-
-.thumb1 { 
- /* 50% 50% centers image in div */
-width: 250px;
-height: 250px;
+html * {
+	font-family: "Arial"
 }
+
+textarea{
+		width:100%;
+}
+
+
+
+#notice_wrapper{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: #317ABE;
+	opacity: 0.7;
+
+	p {
+		padding: 2.5rem 0;
+		text-align: center;
+		margin: 0;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #FFFFFF;
+		letter-spacing: 1px;
+	}
+}
+
+#alert_wrapper{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: #DA534F;
+	opacity: 0.7;
+
+	p {
+		padding: 2.5rem 0;
+		text-align: center;
+		margin: 0;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #FFFFFF;
+		letter-spacing: 1px;
+	}
+}
+
+.align-right{
+	text-align: right;
+}
+
+.right{
+	color: #317ABE;
+}
+
+.left{
+	color: #DA534F;
+}
+
+.heart{
+	font-size:1.2em; 
+	color: white;
+}
+
+.row{
+	margin-top:20px;
+}
+
+.post-header{
+	font-size: 1.2em;
+}
+
+.bold{
+	font-style: bold;
+}
+
+.grey{
+	color: #E8E8E8;
+}
+
+a:hover
+{
+  text-decoration: none;
+  background: none;
+}
+
+.panel-image-body  { 
+/* 50% 50% centers image in div */
+	width: 250px;
+	height: 250px;
+	background-size: cover !important;
+}
+
